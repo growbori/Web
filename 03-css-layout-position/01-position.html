@@ -27,26 +27,27 @@
       width: 100px;
       border: 1px solid black;
     }
-
+    /* 요소를 Normal Flow에 따라 배치 */
     .static {
       position: static;
       background-color: lightcoral;
     }
 
-    /* 절대위치 기준점(relative)를 잡고 이동 */
+    /* 절대위치 기준점(relative)를 부모 요소로 잡고 이동 */
     .absolute {
       position: absolute;
       background-color: lightgreen;
       top: 100px;
       left: 100px;
     }
-
+    /* 자기 자신의 현재 위치를 기준으로 이동, 요소가 차지하는 공간은 static일때와 같음 */
     .relative {
       position: relative;
       background-color: lightblue;
-      top: 100px;
       left: 100px;
+      top: 100px;
     }
+
     /* 원래 위치(static)이었을때를 기준으로 이동 */
 
     .fixed {
@@ -66,5 +67,7 @@
     <div class="box fixed">Fixed</div>
   </div>
 </body>
-
+<!-- static 부터 차례대로 쌓여야 함 ! 근데 이때 Absolute가 자신의 위치가 아닌
+top 100px, left 100px로 이동하길 원함 -> 원래 Absolute가 있어야 할 자리에서 벗어나 공백이 생김
+공백이 있는 자리에 relative가 순서대로 쌓임 -->
 </html>
