@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 자손 */
+    div p {
+      color: blue;
+      font-size: 20px;
+      
+    }
+    div > p {
+      color: crimson;
+      font-size: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <p>자식</p>
+  </div>
+  <div>
+    <ul>
+    <span>
+      <p>손자</p>
+    </span>
+  </ul>
+  </div>
+  <div>
+    <p>자식</p>
+  </div>
+</body>
+</html>
