@@ -1,1 +1,51 @@
-15153
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .card {
+      width: 300px;
+      border: 1px solid black;
+
+    }
+    /* 상속 */
+    /* 높이 넓이 굳이 수정하지 말고 상속, 비율 등 방법을 사용해볼 것 */
+    .profile-img > img {
+      /* 상위요소 div와 같은 너비를 가질 수 있도록 */
+      width: 100%; 
+      /* 부모가 갖는 너비만큼 똑같이 가져라 */
+      display: block;
+      z-index: 1;
+    }
+
+    .name {
+      font-size: 30px;
+      font-weight: bold;
+      background-color: rgb(231, 185, 99);
+      text-align: center;
+      z-index: 9999;
+      position: relative;
+      top : -41px;
+      padding: 5px 0;
+    }
+
+    .txt {
+      text-align: center;
+      position: relative;
+      margin-top: -50px;
+      
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="profile-img">
+      <img src="profile.jpg" alt="Profile Image">
+      <p class="name">Name</p>
+    </div>
+    <p class = 'txt'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci unde officiis ad nostrum. Laboriosam mollitia similique provident fuga tenetur saepe sit, amet eaque neque eius quaerat expedita ea illum veniam.</p>
+  </div>
+</body>
+</html>
