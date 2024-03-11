@@ -241,3 +241,181 @@ CSS가 아닌 편집 디자인에서 나온 개념으로 구성 요소를 잘 �
 정보 구조와 배열을 체계적으로 작성하여 정보의 질서를 부여하는 시스템
 
 ![](https://velog.velcdn.com/images/lurelight/post/f706e9e4-d929-4978-8ccd-ce2a6a56ac5e/image.png)
+
+### **Grid system for responsive web**
+---
+
+**Responsive Web Design**
+
+디바이스 종류나 화면 크기에 상관없이, 어디서든 일관된 레이아웃 및 사용자 경험을 제공하는 디자인 기술
+
+![](https://velog.velcdn.com/images/lurelight/post/c5d3f606-8b0b-4a01-952e-79aa38108f8f/image.png)
+
+**Grid system Breakpoints**
+
+웹 페이지를 다양한 화면 크기에서 적절하게 배치하기 위한 분기점
+
+▷ 화면 너비에 따라 6개의 분기점 제공 (xs, sm, md, lg, xl, xxl)
+
+![](https://velog.velcdn.com/images/lurelight/post/333d7bbd-9174-4e3c-b2ea-f5f5bfee4678/image.png)
+
+각 breakpoints 마다 설정된 최대 너비 값 '이상으로' 화면이 커지면 grid system 동작이 변경됨
+
+![](https://velog.velcdn.com/images/lurelight/post/e913dc28-bf4b-413a-b864-d36d2d27b380/image.png)
+
+![](https://velog.velcdn.com/images/lurelight/post/5b4bebcf-342b-4d6c-bb2f-9d13eb61bed1/image.png)
+
+![](https://velog.velcdn.com/images/lurelight/post/c3966c8c-1607-4e58-8765-093798350bb9/image.png)
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <style>
+    .box {
+      border: 1px solid black;
+      background-color: lightblue;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- breakpoint 마다 사이즈 조절 -->
+  <h2 class="text-center">Breakpoints</h2>
+  <div class="container">
+    <div class="row">
+      <!-- sm 이상일 때 6 칸씩 차지하도록 한다. -->
+      <div class="box col-12 col-sm-6 col-md-2 col-lg-3 col-xl-4 box">
+        col
+      </div>
+      <div class="box col-12 col-sm-6 col-md-8 col-lg-3 col-xl-4 box">
+        col
+      </div>
+      <div class="box col-12 col-sm-6 col-md-2 col-lg-3 col-xl-4 box">
+        col
+      </div>
+      <div class="box col-12 col-sm-6 col-md-12 col-lg-3 col-xl-12 box">
+        col
+      </div>
+    </div>
+
+    <hr>
+
+    <h2 class="text-center">Breakpoints + offset</h2>
+    <div class="row">
+      <div class="box col-12 col-sm-4 col-md-6 box">
+        col
+      </div>
+      <div class="box col-12 col-sm-4 col-md-6 box">
+        col
+      </div>
+      <div class="box col-12 col-sm-4 col-md-6 box">
+        col
+      </div>
+      <!-- md사이즈 이상서부터는 offset이 없다는 것을 명확히 해야함 -->
+      <div class="box col-12 col-sm-4 offset-sm-4 col-md-6 offset-md-0 box">
+        col
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+
+Grid System은 화면 크기에 따라 12개의 칸을 각 요소에 나누어 주는 것 + 6개의 breakpoint
+
+```
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+
+<body>
+  <h2 class="text-center">Grid Cards</h2>
+  <div class="container">
+    <!-- 갯수로 접근하는 방식 gy 위 아래 간격 주기-->
+    <div class="row row-cols-1 row-cols-sm-3 row-cols-md-2 gy-3">
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col offset-sm-4 offset-md-0">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
+              content. This content is a little bit longer.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+```
+
+### **CSS Layout 종합 정리**
+---
+
+![](https://velog.velcdn.com/images/lurelight/post/1a82a21b-45a0-4e7a-b4dc-e4f38795521b/image.png)
+
+![](https://velog.velcdn.com/images/lurelight/post/d763e7da-9ff4-40ea-b24d-08635747a2e9/image.png)
+
+![](https://velog.velcdn.com/images/lurelight/post/2ccbd998-807c-400a-8ce6-3d68c2363239/image.png)
+
+![](https://velog.velcdn.com/images/lurelight/post/8cdad9aa-d80c-4ac1-89e5-ae563e986c2d/image.png)
+
+![](https://velog.velcdn.com/images/lurelight/post/cc32576a-75b2-41ff-8192-394b10ad512c/image.png)
+
+![](https://velog.velcdn.com/images/lurelight/post/0ca6c143-5eb2-4981-877e-770f96e19a82/image.png)
+
+![](https://velog.velcdn.com/images/lurelight/post/4581b2f7-7542-4922-99b5-b214f99bd33f/image.png)
+
+
+
