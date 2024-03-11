@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+</head>
+<style>
+    .navbar-brand {
+        padding-left: 20px;
+    }
+
+    .content {
+        padding-left: 20px;
+    }
+
+    .subtree {
+        background-color: rgb(235, 230, 230);
+        padding-left: 20px;
+        margin-bottom: 0px;
+    }
+    .subsub {
+        position: relative;
+        left: 20px;
+        font-size: 20px;
+    }
+
+    .rightsub {
+        position: relative;
+        right : 0px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .ndinfo {
+        font-size: small;
+        padding-left: 20px;
+    }
+</style>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">음악 스트리밍 서비스</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown link
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <div class="content">
+        <h2>사이드 바</h2>
+        <h1>음악 스트리밍 서비스에 오신 것을 환영합니다.</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing eilt. Nullam eu felis vel eros accumsan eleifend sit amet in odio</p>        <div class="footer">
+            <div class="mb-5 container-fluid">
+                <hr>
+                <p>ⓒ 2023. 음악 스트리밍 서비스.All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+    <div class="subtree">
+        <p><strong style="font-size: large; padding-right: 20px;">음악 스트리밍 서비스</strong>홈 아티스트 플레이리스트 즐겨찾기</p>
+    </div>
+    <div class="container d-flex justify-content-around">
+        <div>사이드 바</div>
+        <div>
+            <h3>음악 스트리밍 서비스에 오신 것을 환영합니다.</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing eilt. Nullam eu felis vel eros accumsan eleifend sit amet in odio</p>
+        </div>
+        </div>    
+        <div class="ndinfo">
+            <hr>
+            <p>ⓒ 2023. 음악 스트리밍 서비스.All rights reserved.</p>
+        </div>
+    </div>
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    
+</html>
