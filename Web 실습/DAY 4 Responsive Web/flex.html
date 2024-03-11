@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .container {
+        width: 800px;
+        height: 50vh;
+        /* 가운데 정렬 */
+        margin: 0 auto;
+        display: flex;
+        /* row, column, row-reverse, column-reverse */
+        flex-direction: row;
+        /* 메인 축을 기준으로 item을 정렬 */
+        /* start, end */
+        justify-content: center;
+
+        /* items가 한줄일 때, 교차축을 기준으로 정렬한다.*/
+        justify-items: center;
+        /* items가 여러줄일 때 flex container를 정렬한다. */
+        align-content: center;
+    }
+    .container > div {
+        /* flex items */
+        width: 100px;
+        height: 100px;
+        background-color: beige;
+        border: 1px solid black;
+    }
+
+    /* 몇 번째 자식을 고를건지 선택 가능 */
+    .container > div:nth-child(1) {
+        flex-basis : 200px;
+    }
+    .container > div:nth-child(2) {
+        flex-basis : 100px;
+    }
+    .container > div:nth-child(3) {
+        flex-basis : 100px;
+    }
+    .container > div:nth-child(4) {
+        flex-basis : 100px;
+    }
+    .container > div:nth-child(5) {
+        flex-basis : 300px;
+    }
+</style>
+<body>
+    <h1>FlexBox 연습</h1>
+    <div class="container">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+    </div>
+</body>
+</html>
