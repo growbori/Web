@@ -210,3 +210,8 @@
     font-size: xx-large;
 }
 
+
+.navbar-brand {
+    font-weight: bolder;
+    font-size: large;
+}
