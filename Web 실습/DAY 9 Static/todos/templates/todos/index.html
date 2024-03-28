@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Todos</h1>
+<form action="{% url "todos:create" %}" method="POST">
+    {% csrf_token %}
+    <input type="text" name = "title" placeholder = "할 일을 입력하세요" required>
+    <input type="submit" value = '등록'>
+</form> 
+<a href="{% url "todos:new" %}">새로운 할 일</a>
+{% for todo in todos %}
+    <ul>
+        <li>
+            {% if todo.is_editting %}
+            <form action="{% url "todos:update" todo.pk %}" method = "POST">
+                {% csrf_token %}
+                <input type="text" value = "{{todo.title}}" name = 'title'>
+                <input type="submit" value = "수정하기">
+            </form>
+            {% else %}
+            <p>{{todo.title}}</p>
+            {% endif %}
+            <p>{{todo.completed}}</p>
+            <p>{{todo.created_at}}</p>
+            <p>
+            </p>
+            <form action="{% url "todos:edit" todo.pk %}" method="post">
+                {% csrf_token %}
+                <input type="submit" value = '수정하기'>
+            </form>
+            <a href="{% url "todos:detail" todo.pk %}">[상세보기]</a>
+            <form action="{% url "todos:delete" todo.pk %}" method = 'POST'>
+                {% csrf_token %}
+                <input type="submit" value="삭제하기">
+            </form>
+            <form action="{% url "todos:complete" todo.pk %}" method = "POST">
+                {% csrf_token %}
+                <input type="submit" value = "완료하기">
+            </form>
+        </li>
+    </ul>
+{% endfor %}
+{% endblock content %}
